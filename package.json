@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Collection of interview questions and solutions",
   "scripts": {
-    "test": "NODE_ENV=test jest",
+    "lint": "flow check modules",
+    "test": "NODE_ENV=test npm run lint && jest",
     "test:watch": "NODE_ENV=test jest -w",
     "test:clean": "NODE_ENV=test rm -rf node_modules/jest-cli/.haste_cache && jest"
   },
@@ -33,9 +34,12 @@
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
+    "babel-plugin-syntax-flow": "^6.5.0",
+    "babel-plugin-transform-flow-strip-types": "^6.5.0",
     "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
+    "flow-bin": "^0.22.0",
     "jest-cli": "^0.8.2"
   }
 }
