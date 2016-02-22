@@ -1,0 +1,5 @@
+# Ignore generated folders
+node_modules
+
+# Ignore dotfiles that we don't care about
+.DS_Store

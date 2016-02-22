@@ -1,0 +1,41 @@
+{
+  "name": "interview",
+  "version": "0.0.1",
+  "description": "Collection of interview questions and solutions",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest -w",
+    "test:clean": "NODE_ENV=test rm -rf node_modules/jest-cli/.haste_cache && jest"
+  },
+  "author": "Josh Black",
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "/lib/",
+      "/node_modules/"
+    ],
+    "persistModuleRegistryBetweenSpecs": true,
+    "preprocessorIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "rootDir": "",
+    "scriptPreprocessor": "resources/jest/preprocessor.js",
+    "setupEnvScriptFile": "resources/jest/environment.js",
+    "testPathDirs": [
+      "<rootDir>/modules"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/fbjs",
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/core-js"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "jest-cli": "^0.8.2"
+  }
+}
