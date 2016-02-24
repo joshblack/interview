@@ -5,13 +5,13 @@ export default class BinaryTree {
   root: Node;
   __length: number;
 
+  constructor(root: Node) {
+    this.root = root;
+  }
+
   // $FlowFixMe - Computed keys are not supported
   [Symbol.iterator]() {
     return this.inOrder();
-  }
-
-  constructor(root: Node) {
-    this.root = root;
   }
 
   // $FlowFixMe - get/set properties are not supported
@@ -44,6 +44,8 @@ export default class BinaryTree {
 
     return 1 + Math.max(this._height(node.left), this._height(node.right));
   }
+
+  // find() {}
 
   * preOrder(node: ?Node): Iterator {
     if (node === undefined) {
