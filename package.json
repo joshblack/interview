@@ -44,6 +44,7 @@
     "jest-cli": "^0.8.2"
   },
   "dependencies": {
+    "fbjs": "^0.7.2",
     "invariant": "^2.2.0"
   }
 }
