@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "fbjs": "^0.7.2",
+    "immutable": "^3.7.6",
     "invariant": "^2.2.0"
   }
 }
