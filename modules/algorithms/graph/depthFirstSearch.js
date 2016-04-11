@@ -13,20 +13,27 @@ export const dfs = (graph, fn) => {
   const search = (vertex) => {
     neighbors(graph, vertex).forEach(({ key, edge }) => {
       if (visited[key]) {
+        fn(edge.get('value'), key, true);
         return;
       }
 
-      fn(edge.get('value'), key, edge)
+      fn(edge.get('value'), key, false);
+
       visited[key] = true;
       search(key);
+
+      fn(edge.get('value'), key, true);
     });
   };
 
   vertices.forEach((key) => {
     if (!visited[key]) {
-      fn(graph.get(key).get('value'), key, graph.get(key));
+      fn(graph.get(key).get('value'), key, false);
+
       visited[key] = true;
       search(key);
+
+      fn(graph.get(key).get('value'), key, true);
     }
   });
 };

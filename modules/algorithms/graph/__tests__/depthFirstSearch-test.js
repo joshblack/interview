@@ -24,8 +24,12 @@ describe('dfs', () => {
 
     dfs(graph, (value, key) => fn(key));
 
-    expect(fn.mock.calls).toEqual([
-      ['a'], ['b'], ['c'], ['d'], ['e'],
+    const calls = fn.mock.calls.reduce((acc, arr) => {
+      return acc.concat(arr);
+    }, []);
+
+    expect(calls).toEqual([
+      'a', 'b', 'c', 'a', 'd', 'd', 'c', 'b', 'c', 'a', 'e', 'e', 'e',
     ]);
   });
 });
