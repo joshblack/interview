@@ -39,7 +39,7 @@ export const removeVertex = (G, key) => {
 };
 
 export const getVertices = (G) => {
-  return G.map((value, key) => key);
+  return List(G.keys());
 };
 
 export const getVertexValue = (G, key) => {
@@ -95,5 +95,5 @@ export const adjacent = (G, x, y) => {
 };
 
 export const neighbors = (G, x) => {
-  return G.get(x).get('edges').map((key) => G.get(key));
+  return G.get(x).get('edges').map((key) => ({ key, edge: G.get(key) }));
 };

@@ -206,10 +206,10 @@ describe('ImmutableGraph', () => {
         ['a', 'b'],
       ];
       const g = Graph(vertices, edges);
+      const n = neighbors(g, 'a');
 
-      expect(neighbors(g, 'a').toJS()).toEqual([
-        { value: 2, edges: [] },
-      ]);
+      expect(n.get(0).key).toBe('b');
+      expect(n.get(0).edge).toBeDefined();
     });
   });
 
