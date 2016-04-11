@@ -134,12 +134,65 @@ describe('ImmutableGraph', () => {
       });
     });
 
+    it('should add multiple edges', () => {
+      const g = addVertices(Map(), [
+        { key: 'a', value: 1 },
+        { key: 'b', value: 2 },
+        { key: 'c', value: 3 },
+      ]);
+      const g1 = addEdge(addEdge(g, 'a', 'b'), 'a', 'c');
+
+      expect(g1.toJS()).toEqual({
+        a: {
+          value: 1,
+          edges: ['b', 'c'],
+        },
+        b: {
+          value: 2,
+          edges: [],
+        },
+        c: {
+          value: 3,
+          edges: [],
+        },
+      });
+    });
+
     it('should warn if you try to add an edge to a vertex that doesn\'t exist', () => {
       const g = addVertices(Map(), [
         { key: 'a', value: 1 },
       ]);
 
       expect(() => addEdge(g, 'a', 'b')).toThrow();
+    });
+  });
+
+  describe('addEdges', () => {
+    it('should add multiple edges to a graph', () => {
+      const g = addVertices(Map(), [
+        { key: 'a', value: 1 },
+        { key: 'b', value: 2 },
+        { key: 'c', value: 3 },
+      ]);
+      const g1 = addEdges(g, [
+        ['a', 'b'],
+        ['a', 'c'],
+      ]);
+
+      expect(g1.toJS()).toEqual({
+        a: {
+          value: 1,
+          edges: ['b', 'c'],
+        },
+        b: {
+          value: 2,
+          edges: [],
+        },
+        c: {
+          value: 3,
+          edges: [],
+        },
+      });
     });
   });
 

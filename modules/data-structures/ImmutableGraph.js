@@ -38,6 +38,10 @@ export const removeVertex = (G, key) => {
   });
 };
 
+export const getVertices = (G) => {
+  return G.map((value, key) => key);
+};
+
 export const getVertexValue = (G, key) => {
   return G.get(key).get('value');
 };
@@ -60,9 +64,16 @@ export const addEdge = (G, x, y) => {
 
 export const addEdges = (G, edges) => {
   const e = edges.reduce((graph, [x, y]) => {
+    if (graph.has(x)) {
+      return graph.update(x, (map) => Map({
+        value: map.get('value'),
+        edges: map.get('edges').push(y),
+      }));
+    }
+
     return graph.set(x, Map({
       value: G.get(x).get('value'),
-      edges: List([y]),
+      edges: G.get(x).get('edges').push(y),
     }));
   }, Map());
 
