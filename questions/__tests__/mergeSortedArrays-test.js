@@ -24,4 +24,16 @@ describe('mergeSortedArrays', () => {
 
     expect(mergeSortedArrays(a, b)).toEqual([0, 1, 2, 3, 4]);
   });
+
+  it('should sort two empty arrays', () => {
+    expect(mergeSortedArrays([], [])).toEqual([]);
+  });
+
+  it('should sort one empty array', () => {
+    expect(mergeSortedArrays([], [1])).toEqual([1]);
+  });
+
+  it('should correctly handle duplicate numbers', () => {
+    expect(mergeSortedArrays([1], [1])).toEqual([1, 1]);
+  });
 });
