@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Collection of interview questions and solutions",
   "scripts": {
-    "lint": "flow check modules",
+    "lint": "flow check questions",
     "test": "NODE_ENV=test npm run lint && jest",
     "test:watch": "NODE_ENV=test jest -w",
     "test:clean": "NODE_ENV=test rm -rf node_modules/jest-cli/.haste_cache && jest"
@@ -22,7 +22,8 @@
     "scriptPreprocessor": "resources/jest/preprocessor.js",
     "setupEnvScriptFile": "resources/jest/environment.js",
     "testPathDirs": [
-      "<rootDir>/modules"
+      "<rootDir>/modules",
+      "<rootDir>/questions"
     ],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/fbjs",
@@ -41,7 +42,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "fbjs": "^0.7.2",
     "flow-bin": "^0.22.0",
-    "jest-cli": "^0.8.2"
+    "jest-cli": "^12.1.1"
   },
   "dependencies": {
     "fbjs": "^0.7.2",
