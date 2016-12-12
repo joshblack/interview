@@ -1,0 +1,8 @@
+{
+  "name": "data-structure<%= package.name %>",
+  "version": "0.1.0",
+  "description": "Reference <%= name %> Data Structure implementation",
+  "main": "src/index.js",
+  "author": "Josh Black <joshblack@us.ibm.com>",
+  "license": "MIT"
+}

@@ -4,7 +4,6 @@ Collection of interview questions and resources for JavaScript developers.
 
 ## Project Structure
 
-- `modules`: implementation of various algorithms or common interview questions
-  - each folder has a `__tests__` folder that includes tests for the problem/algorithm
-- `wiki`: will contain a variety of write-ups for important concepts as I tackle more and more interview questions
+This project now follows a monorepo design, powered by [Lerna](https://github.com/lerna/lerna). The `packages` folder contains modules for data structure implementations, algorithms, as well as questions.
 
+`wiki` will contain a variety of write-ups for important concepts as I tackle more and more interview questions.

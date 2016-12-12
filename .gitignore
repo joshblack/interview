@@ -1,5 +1,6 @@
-# Ignore generated folders
+# Ignore generated folders and files
 node_modules
+npm-debug.log
 
 # Ignore dotfiles that we don't care about
 .DS_Store

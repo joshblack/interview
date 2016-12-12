@@ -1,0 +1,8 @@
+{
+  "name": "question<%= package.name %>",
+  "version": "0.1.0",
+  "description": "Reference <%= name %> Question implementation",
+  "main": "src/index.js",
+  "author": "Josh Black <joshblack@us.ibm.com>",
+  "license": "MIT"
+}

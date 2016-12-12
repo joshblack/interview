@@ -1,0 +1,8 @@
+{
+  "name": "data-structure-graph",
+  "version": "0.1.0",
+  "description": "Reference Graph Data Structure implementation",
+  "main": "src/index.js",
+  "author": "Josh Black <joshblack@us.ibm.com>",
+  "license": "MIT"
+}
