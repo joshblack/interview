@@ -1,0 +1,58 @@
+exports[`Trie #insert should correctly initialize with a single character 1`] = `
+Object {
+  "children": Object {
+    "a": Object {
+      "children": Object {},
+      "value": 5,
+    },
+  },
+}
+`;
+
+exports[`Trie #insert should correctly share prefixes with multiple words 1`] = `
+Object {
+  "children": Object {
+    "a": Object {
+      "children": Object {
+        "b": Object {
+          "children": Object {
+            "c": Object {
+              "children": Object {},
+              "value": 20,
+            },
+          },
+          "value": 10,
+        },
+        "c": Object {
+          "children": Object {},
+          "value": 15,
+        },
+      },
+      "value": 5,
+    },
+  },
+}
+`;
+
+exports[`Trie #startsWith should return a node that corresponds to the end of the prefix 1`] = `
+Object {
+  "children": Object {
+    "m": Object {
+      "children": Object {
+        "y": Object {
+          "children": Object {},
+          "value": 56,
+        },
+      },
+    },
+    "n": Object {
+      "children": Object {
+        "n": Object {
+          "children": Object {},
+          "value": 15,
+        },
+      },
+    },
+  },
+}
+`;

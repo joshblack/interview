@@ -22,7 +22,8 @@
     "jest-cli": "^17.0.3",
     "kebab-case": "^1.0.0",
     "lerna": "2.0.0-beta.30",
-    "lodash.template": "^4.4.0"
+    "lodash.template": "^4.4.0",
+    "pretty-format": "^4.3.1"
   },
   "dependencies": {
     "immutable": "^3.8.1"
