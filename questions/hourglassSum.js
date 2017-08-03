@@ -1,7 +1,22 @@
 /* @flow */
 
+/**
+ * Problem:
+ * https://www.hackerrank.com/challenges/2d-array/problem
+ *
+ * Constraints:
+ * - `container` is an n x n square (probably length 6 from question)
+ *
+ * If we have an n x n square, we have (n - 2) * (n - 2) "hourglasses"
+ */
+
 // Positions that define an "hourglass"
-const positions = [[-1, -1], [0, -1], [1, -1], [0, 0], [-1, 1], [0, 1], [1, 1]];
+// prettier-ignore
+const positions = [
+  [-1, -1], [0, -1], [1, -1],
+            [0, 0],
+  [-1, 1],  [0, 1],  [1, 1]
+];
 
 const getHourglassSumFrom = (
   array: Array<Array<number>>,
@@ -16,15 +31,6 @@ const getHourglassSumFrom = (
   return sum;
 };
 
-/**
- * Problem:
- * https://www.hackerrank.com/challenges/2d-array/problem
- *
- * Constraints:
- * - `container` is an n x n square (probably length 6 from question)
- *
- * If we have an n x n square, we have (n - 2) * (n - 2) "hourglasses"
- */
 const hourglassSum = (container: Array<Array<number>>): number => {
   // n x n square
   const size = container.length;

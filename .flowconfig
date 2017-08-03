@@ -2,6 +2,7 @@
 .*/__tests__/.*
 .*/modules/*
 .*/data-structures/*
+.*/node_modules/findup/test/*
 
 [include]
 
