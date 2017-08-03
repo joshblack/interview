@@ -1,12 +1,10 @@
 jest.unmock('invariant');
 jest.unmock('../newPositionInArray.js');
 
-import { positionNewArray } from '../newPositionInArray';
+import {positionNewArray} from '../newPositionInArray';
 
 describe('newPositionInArray', () => {
-  it('should accept two arrays', () => {
-
-  });
+  it('should accept two arrays', () => {});
 
   it('should throw if the arrays are not of the same length', () => {
     expect(() => positionNewArray([], [1])).toThrow();

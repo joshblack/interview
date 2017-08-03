@@ -27,7 +27,7 @@ import invariant from 'invariant';
 export const mergeSortedArraysRecursive = (a, b) => {
   invariant(
     Array.isArray(a) && Array.isArray(b),
-    'Expected both inputs to be an instance of `Array`.'
+    'Expected both inputs to be an instance of `Array`.',
   );
 
   if (a.length === 0 && b.length !== 0) {
@@ -42,23 +42,17 @@ export const mergeSortedArraysRecursive = (a, b) => {
   const headB = b[0];
 
   if (headA <= headB) {
-    return [
-      headA,
-      ...mergeSortedArraysRecursive(a.slice(1), b)
-    ];
+    return [headA, ...mergeSortedArraysRecursive(a.slice(1), b)];
   }
 
-  return [
-    headB,
-    ...mergeSortedArraysRecursive(a, b.slice(1))
-  ];
+  return [headB, ...mergeSortedArraysRecursive(a, b.slice(1))];
 };
 
 // Iterative solution
 export const mergeSortedArrays = (a, b) => {
   invariant(
     Array.isArray(a) && Array.isArray(b),
-    'Expected both inputs to be an instance of `Array`.'
+    'Expected both inputs to be an instance of `Array`.',
   );
 
   const length = a.length + b.length;

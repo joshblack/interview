@@ -37,23 +37,23 @@ const swap = (array, from, to) => {
 
 export const positionNewArray = (
   originalArray: Array<any>,
-  nextPositions: Array<number>
+  nextPositions: Array<number>,
 ): void => {
   invariant(
     originalArray.length === nextPositions.length,
-    'The two arrays should have the same length'
+    'The two arrays should have the same length',
   );
 
   invariant(
-    nextPositions.every((position) => position < originalArray.length),
+    nextPositions.every(position => position < originalArray.length),
     'Invalid position index found in the nextPositions array. Expected ' +
-    'each index to be less than %s.',
-    originalArray.length
+      'each index to be less than %s.',
+    originalArray.length,
   );
 
   invariant(
-    (new Set(nextPositions)).size === nextPositions.length,
-    'There are one or more duplicate indices in the nextPositions array'
+    new Set(nextPositions).size === nextPositions.length,
+    'There are one or more duplicate indices in the nextPositions array',
   );
 
   for (let i = 0; i < originalArray.length; i++) {
@@ -75,4 +75,3 @@ export const positionNewArray = (
     originalArray[j] = x;
   }
 };
-

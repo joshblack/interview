@@ -1,8 +1,0 @@
-{
-  "name": "data-structure-binary-tree",
-  "version": "0.1.0",
-  "description": "Reference BinaryTree Data Structure implementation",
-  "main": "src/index.js",
-  "author": "Josh Black <joshblack@us.ibm.com>",
-  "license": "MIT"
-}

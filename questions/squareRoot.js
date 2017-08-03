@@ -10,6 +10,4 @@
  */
 
 // Approximate with Newton's method
-const squareRoot = (number, precision = 600) => {
-
-};
+const squareRoot = (number, precision = 600) => {};

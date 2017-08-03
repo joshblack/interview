@@ -1,6 +1,6 @@
 jest.unmock('../mergeSortedArrays');
 
-import { mergeSortedArrays } from '../mergeSortedArrays';
+import {mergeSortedArrays} from '../mergeSortedArrays';
 
 describe('mergeSortedArrays', () => {
   it('should be a function', () => {

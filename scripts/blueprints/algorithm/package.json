@@ -1,8 +1,0 @@
-{
-  "name": "algorithm<%= package.name %>",
-  "version": "0.1.0",
-  "description": "Reference <%= name %> Algorithm implementation",
-  "main": "src/index.js",
-  "author": "Josh Black <joshblack@us.ibm.com>",
-  "license": "MIT"
-}

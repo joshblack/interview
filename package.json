@@ -3,38 +3,38 @@
   "version": "0.1.0",
   "description": "Collection of interview questions and solutions",
   "scripts": {
-    "flow": "flow check packages",
-    "generate": "node scripts/init.js",
+    "commitmsg": "validate-commit-msg",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "prettier": "prettier --write --no-bracket-spacing --single-quote --jsx-bracket-same-line --trailing-comma all --print-width 80 \"questions/**/*.js\"",
+    "precommit": "lint-staged",
     "test": "jest"
   },
   "author": "Josh Black",
   "devDependencies": {
-    "babel-jest": "^17.0.2",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-flow": "^1.0.0",
-    "babel-preset-stage-2": "^6.18.0",
-    "chalk": "^1.1.3",
-    "fbjs": "^0.8.6",
-    "flow-bin": "^0.36.0",
-    "fs-extra": "^1.0.0",
-    "inquirer": "^2.0.0",
-    "jest-cli": "^17.0.3",
-    "kebab-case": "^1.0.0",
-    "lerna": "2.0.0-beta.30",
-    "lodash.template": "^4.4.0",
-    "pretty-format": "^4.3.1"
+    "babel-jest": "20.0.3",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-flow": "6.23.0",
+    "babel-preset-stage-2": "6.24.1",
+    "fbjs": "0.8.14",
+    "flow-bin": "0.52.0",
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3",
+    "validate-commit-msg": "^2.14.0"
   },
-  "dependencies": {
-    "immutable": "^3.8.1"
+  "dependencies": {},
+  "jest": {},
+  "config": {
+    "validate-commit-msg": {
+      "helpMessage": "\nNeed help? We're currently using a commit convention that is outlined here:\nhttps://github.com/conventional-changelog/conventional-changelog/blob/v0.5.3/conventions/angular.md\n\nWe use this convention in order to make contributions to the project clear and predictable.\n\nCurrently, we support the following types: feat, fix, docs, style, refactor, perf, test, chore, revert.\n\nYou can use these types in your commit message in the following fashion:\n\n$ git commit -m \"<type>(<scope>): some commit message here\""
+    }
   },
-  "jest": {
-    "testPathDirs": [
-      "packages"
-    ],
-    "collectCoverageFrom": [
-      "packages/**/*.js",
-      "!**/node_modules/**"
+  "lint-staged": {
+    "questions/**/*.js": [
+      "prettier",
+      "git add"
     ]
   }
 }
